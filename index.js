@@ -9,7 +9,6 @@ const URL = 'https://kodaktor.ru/g/exp260425';
   await page.goto(URL);
   const startTime = await page.evaluate(() => performance.now());
   await page.click('button');
-  await page.waitForFunction(() => !document.querySelector('deepl-input-controller[translate="no"]'));
   const endTime = await page.evaluate(() => performance.now());
   const executionTime = endTime - startTime;
   const title = await page.title();
